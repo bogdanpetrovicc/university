@@ -25,6 +25,7 @@ public class JobDao extends AbstractDao<Job> {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return job;
     }
 }

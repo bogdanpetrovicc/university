@@ -37,31 +37,31 @@
 <main class="main-page">
     <div class="contect-card">
         <% if (loggedIn && user.getRoleFk().getRole().equals("Staff")) {%>
-        <h2>Welcome to MyBusiness</h2>
-        <h3>Greetings <span class="name">
-            <%=user.getUsername()%></span>!</h3>
+        <h3>Welcome to MyBusiness</h3>
+        <h2>Greetings <span class="name">
+            <%=user.getUsername()%></span>!</h2>
         <div class="para">
             <p style="font-size: 20px;">See all jobs <a href="job.jsp"
                                                         style="text-decoration: none; color: darkorange;">here!</a>.</p>
         </div>
         <% } %>
         <% if (loggedIn && user.getRoleFk().getRole().equals("Admin")) {%>
-        <h2>Welcome to MyBusiness</h2>
-        <h3>Greetings <span class="name"><%=user.getUsername()%></span>!</h3>
+        <h3>Welcome to MyBusiness</h3>
+        <h2>Greetings <span class="name"><%=user.getUsername()%></span>!</h2>
         <div class="para">
             <p style="font-size: 20px;">Add a new user <a href="addUser.jsp"
                                                           style="text-decoration: none; color: darkorange;">here!</a>.
             </p>
-            <p style="font-size: 20px;">Add a new company <a href="addCompany.jsp"
+            <p style="font-size: 20px;">Add a new firm <a href="addCompany.jsp"
                                                           style="text-decoration: none; color: darkorange;">here!</a>.
             </p>
         </div>
         <% } %>
         <% if (loggedIn && user.getRoleFk().getRole().equals("Employer")) {%>
-        <h2>Welcome to MyBusiness</h2>
-        <h3>Greetings <span class="name">
+        <h3>Welcome to MyBusiness</h3>
+        <h2>Greetings <span class="name">
             <%=user.getUsername()%>
-        </span>!</h3>
+        </span>!</h2>
         <div class="para">
             <p style="font-size: 20px;">Create a new job <a href="addJob.jsp"
                                                             style="text-decoration: none; color: darkorange;">here!</a>.
