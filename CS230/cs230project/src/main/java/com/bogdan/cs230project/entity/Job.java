@@ -25,7 +25,7 @@ public class Job implements Serializable {
     @ManyToOne()
     private Company company;
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinTable(name = "user_job", joinColumns = @JoinColumn(name = "user_fk"), inverseJoinColumns = @JoinColumn(name = "job_fk"))
+    @JoinTable(name = "user_job", joinColumns = @JoinColumn(name = "job_fk"), inverseJoinColumns = @JoinColumn(name = "user_fk"))
     private List<User> users = new ArrayList<>();
 
 }

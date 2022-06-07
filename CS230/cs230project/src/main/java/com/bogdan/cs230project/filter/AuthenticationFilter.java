@@ -37,7 +37,6 @@ public class AuthenticationFilter implements Filter {
         HttpSession session = request.getSession();
         String path = request.getRequestURI().substring(request.getContextPath().length()).replaceAll("[/]+$", "");
         boolean allowedPath = ALLOWED_PATHS.contains(path);
-        // TODO: filters for /admin/user
         boolean loggedIn = (session != null && session.getAttribute("username") != null && session.getAttribute("id") != null);
 
         if (allowedPath || loggedIn) {

@@ -63,10 +63,10 @@
 
             <div class="field is-grouped">
                 <div class="control">
-                    <input type="submit" class="button is-link text-center" value="Submit"/>
+                    <input type="submit" class="button is-link text-center" value="Log in"/>
                 </div>
             </div>
-            <a class="btn btn-primary" href="register.jsp" role="button">Register here!</a>
+            <a class="btn btn-primary" href="register.jsp" role="button">Register here</a>
         </form>
     </div>
 </div>

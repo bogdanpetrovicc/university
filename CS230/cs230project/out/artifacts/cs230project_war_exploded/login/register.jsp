@@ -54,8 +54,9 @@
     }
 %>
 <div class="form-control">
-    <div class="card-header">
+    <div style="margin-right: 70px; margin-left: 70px">
         <a class="button" role="button" href="${pageContext.request.contextPath}/index.jsp">Home</a>
+        <hr>
     </div>
     <br>
     <h2 style="text-align: center">Register</h2>
@@ -118,7 +119,7 @@
 
             <div class="field is-grouped">
                 <div class="control">
-                    <input type="submit" class="button is-link" value="Submit"/>
+                    <input type="submit" class="button is-link" value="Register"/>
                 </div>
             </div>
         </form>
