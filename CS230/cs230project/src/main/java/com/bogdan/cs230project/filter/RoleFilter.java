@@ -34,7 +34,6 @@ public class RoleFilter implements Filter {
             }
         } else {
             response.getWriter().write("<script>alert('You are not logged in');window.location.href='/login.jsp'</script>");
-//            response.sendRedirect(request.getContextPath() + "/login.jsp");
         }
 
     }
