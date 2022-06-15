@@ -109,9 +109,8 @@
                     <div class="select">
                         <select name="role" id="role" class="form-select">
                             <option value="" disabled selected>Select a role</option>
-                            <c:forEach items="${roles}" var="role">
-                                <option value="${role.role}">${role.role}</option>
-                            </c:forEach>
+                                <option value="Staff">Staff</option>
+                                <option value="Employer">Employer</option>
                         </select>
                     </div>
                 </div>

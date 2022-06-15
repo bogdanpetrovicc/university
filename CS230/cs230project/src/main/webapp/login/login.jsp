@@ -66,7 +66,7 @@
                     <input type="submit" class="button is-link text-center" value="Log in"/>
                 </div>
             </div>
-            <a class="btn btn-primary" href="register.jsp" role="button">Register here</a>
+            <a class="button is-link" href="register.jsp" role="button">Register here</a>
         </form>
     </div>
 </div>
