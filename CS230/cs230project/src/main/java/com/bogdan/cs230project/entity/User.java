@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -22,6 +24,9 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
     @JoinColumn(name = "role_fk", referencedColumnName = "role_id")
-    @ManyToOne()
+    @ManyToOne
     private Role roleFk;
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(name = "user_job", joinColumns = @JoinColumn(name = "user_fk"), inverseJoinColumns = @JoinColumn(name = "job_fk"))
+    private List<Job> jobs = new ArrayList<>();
 }

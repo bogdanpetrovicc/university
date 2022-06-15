@@ -32,8 +32,10 @@ public class SubscribeServlet extends HttpServlet {
         Job job = jobDao.find(jobId);
         System.out.println("job: " + job.getJobId());
 
-        job.getUsers().add(user);
+        user.getJobs().add(job);
         jobDao.update(job);
+        UserDao userDao = new UserDao();
+        userDao.update(user);
 
         req.getRequestDispatcher("job.jsp").forward(req, resp);
     }

@@ -42,6 +42,7 @@
                     <%if (loggedIn && user.getRoleFk().getRole().equals("Staff")) {%>
                     <a href="index.jsp" class="button is-light">Home</a>
                     <a href="job.jsp" class="button is-light">Find Jobs</a>
+                    <a href="allSubscribedJobs.jsp" class="button is-light">Your Jobs</a>
                     <a href="${pageContext.request.contextPath}/logout" class="button is-light">Logout</a>
                     <%}%>
                     <%if (loggedIn && user.getRoleFk().getRole().equals("Admin")) {%>
