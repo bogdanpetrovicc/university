@@ -32,3 +32,14 @@
 - CS323 - *C/C++*
 - IT355 - *Web systems 2*
 - SE325 - *Managing software development projects*
+
+## Fourth year:
+
+- IT381 - *Protection and security of information*
+- CS324 - *Scripting languages*
+- CS322 - *C# programming language*
+- SE401 - *Team software development*
+- IT390 - *Professional practice and ethics*
+- NT310 - *Professional communication*
+- SE490 - *Professional practice*
+- SE495 - *Final work*
