@@ -1,0 +1,68 @@
+IPTABLES
+
+sudo apt install iptables
+
+Postoje:
+
+MAGLE TABLE 
+NAT TABLE
+FILTER TABLE (Mi koristimo)
+
+iptables -L - izlistavanje chain-ova (lanaca)
+
+INPUT chain - dolazni
+FORWARD chain - saobracaj u firewall-u
+OUTPUT chain - odlazni
+
+iptables --policy INPUT DROP/ACCEPT - u ovom primeru, neka bude DROP
+iptables --policy OUTPUT DROP/ACCEPT - u ovom primeru, neka bude DROP
+iptables --policy FORWARD DROP/ACCEPT - u ovom primeru, neka bude DROP
+
+UBACIVANJE LOOPBACK INTERFEJSA
+
+iptables -A INPUT -j ACCEPT -i lo
+iptables -A OUTPUT -j ACCEPT -o lo
+
+iptables -L -n -v --line-numbers
+
+STANJA-USPOSTAVLJANJE VEZE
+
+iptables -A INPUT -j ACCEPT -m conntrack --ctstate ESTABLSIHED,RELATED
+iptables -A OUTPUT -j ACCEPT -m conntrack --ctstate ESTABLSIHED,RELATED
+
+iptables -L -n -v --line-numbers
+
+OMOGUCAVANJE PRISTUPA POSEBNIM IP ADRESAMA
+
+iptables -A INPUT -j ACCEPT -s 192.168.56.10 
+
+OMOGUCAVANJE PRISTUPA PORTOVIMA 
+
+iptables -A INPUT -j ACCEPT -p icmp --icmp-type 8
+iptables -A INPUT -j ACCEPT -p tcp --dport 22 
+iptables -A OUTPUT -j ACCEPT -p icmp --icmp-type 8
+iptables -A OUTPUT -j ACCEPT -p tcp --dport 22 (ovo je SSH)
+iptables -A OUTPUT -j ACCEPT -p tcp --dport 80 (ovo je za WEB)
+iptables -A OUTPUT -j ACCEPT -p tcp --dport 443
+iptables -A OUTPUT -j ACCEPT -p tcp --dport 53 (ovo je DNS)
+iptables -A OUTPUT -j ACCEPT -p udp --dport 53 
+
+ping google.com
+
+BRISANJE PRAVILA
+
+iptables -D OUTPUT 8(broj pravila koje zelimo da obrisemo)
+
+DODAVANJE KOMENTARA
+
+iptables -A INPUT -j ACCEPT -p tcp --dport 22 -m comment --comment "Dozvoli SSH"
+
+iptables -L -n -v --line-numbers
+
+PRIHVATANJE PORTOVA, INTERFEJSA I IP ADRESA U ISTO VREME
+
+iptables -A INPUT -s 192.168.56.10 -p tcp --dport 22 -i lo -j ACCEPT
+
+ZA BRISANJE SVIH PRAVILA
+
+iptables -F
